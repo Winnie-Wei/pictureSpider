@@ -30,9 +30,8 @@ if not os.path.exists('photo'):
 i = 0
 #for循环 循环读取我们爬取到的 图片地址列表
 for link in links:
-    name = link.split('/')[6].split('.')[0]
+    name = link.split('/')[6]
     i+=1
-    #filename ='photo\\'+'photo'+str(i)+'.jpg'
-    filename ='photo\\'+name+'.jpg'
+    filename ='photo\\'+name
     with open(filename,'w'):
         urllib.request.urlretrieve(link,filename)
